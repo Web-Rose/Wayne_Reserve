@@ -8,26 +8,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111;--mute:#6b6b6b;--line:#e6e6e6;--soft:#f5f5f5;--dc:#1f4f8f;--mv:#a82525;--ok:#1d6b43}
+:root{--acc:#e8762b;--acc-d:#b4540f;--acc2:#6b4fbb;--ink:#111;--mute:#6b6b6b;--line:#e6e6e6;--soft:#f5f5f5;--dc:#1f4f8f;--mv:#a82525;--ok:#1d6b43}
 *{box-sizing:border-box}
-body{margin:0;background:#ececec;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-.app{max-width:560px;margin:0 auto;background:#fff;min-height:100vh;padding:0 16px 40px}
+body{margin:0;background:#efe7da;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{max-width:560px;margin:0 auto;background:#fff;min-height:100vh;padding:0 16px 40px;border-top:6px solid transparent;border-image:linear-gradient(90deg,var(--acc),var(--acc2)) 1}
 :focus-visible{outline:3px solid #111;outline-offset:2px}
 .top{display:flex;align-items:center;gap:12px;padding:16px 0 10px}
-.logo{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:23px}
-.badge{border:1px solid var(--ink);border-radius:4px;padding:2px 9px;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.logo{width:46px;height:46px;border-radius:50%;border:2px solid var(--acc);display:grid;place-items:center;font-size:23px;overflow:hidden}.logo img{width:100%;height:100%;object-fit:cover}
+.badge{border:1.5px solid var(--acc);border-radius:4px;padding:2px 9px;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
 .sub{font-size:13px;color:var(--mute)}
 .tabs{display:flex;gap:2px;overflow-x:auto;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:5}
-.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:12px 10px;font:inherit;font-size:14px;color:var(--mute);cursor:pointer;white-space:nowrap}
-.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--ink);font-weight:600}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:12px 10px;font:inherit;font-size:14px;color:var(--mute);cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--acc);font-weight:600}
 h2{font:500 34px/1.1 "Cormorant Garamond",Georgia,serif;margin:22px 0 10px}
 p{margin:0 0 10px}
-.hero{height:190px;border-radius:16px;background:linear-gradient(135deg,#1c1c1c,#555);display:grid;place-items:center;font-size:56px;overflow:hidden;margin-top:14px}
+.hero{height:190px;border-radius:16px;background:linear-gradient(135deg,#16283d,#4b3a7a 60%,#e8762b 135%);display:grid;place-items:center;font-size:56px;overflow:hidden;margin-top:14px}
 .hero img{width:100%;height:100%;object-fit:cover}
 .stat{display:flex;gap:10px;margin:14px 0}
 .stat div{flex:1;background:var(--soft);border-radius:12px;padding:12px;text-align:center}
-.stat b{display:block;font:600 28px "Cormorant Garamond",Georgia,serif}
-.btn{background:var(--ink);color:#fff;border:0;border-radius:10px;padding:12px 18px;font:inherit;font-weight:600;cursor:pointer}
+.stat b{display:block;font:600 30px "Cormorant Garamond",Georgia,serif;color:var(--acc-d)}
+.btn{background:var(--acc-d);color:#fff;border:0;border-radius:10px;padding:12px 18px;font:inherit;font-weight:600;cursor:pointer}
 .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--ink)}
 .toolbar{display:flex;gap:8px;margin:12px 0}
 .search{flex:1;min-width:0;padding:12px 16px;border-radius:99px;border:1px solid var(--line);background:var(--soft);font:inherit}
@@ -39,7 +39,7 @@ select{padding:11px;border-radius:10px;border:1px solid var(--line);background:#
 .info b{display:block;overflow-wrap:anywhere}
 .info small{display:block;color:var(--mute);font-size:14px}
 .tag{font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;color:#fff;white-space:nowrap}
-.tag.DC{background:var(--dc)}.tag.Marvel{background:var(--mv)}.tag.adm{background:var(--ink)}
+.tag.DC{background:var(--dc)}.tag.Marvel{background:var(--mv)}.tag.adm{background:var(--acc2)}
 .x{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 9px;font:inherit;font-size:14px;cursor:pointer;margin-top:6px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .gc .pic{width:100%;aspect-ratio:3/4;border-radius:12px;object-fit:cover;display:block}
@@ -55,13 +55,44 @@ dialog input,dialog select{width:100%;padding:11px;border-radius:10px;border:1px
 .row2{display:flex;gap:10px}.row2>div{flex:1}
 .actions{display:flex;gap:10px;margin-top:16px}
 #msg{margin-top:10px;font-size:14px;font-weight:600;min-height:20px}
+.quote{margin:0 0 14px;padding:4px 0 4px 14px;border-left:3px solid var(--acc);font:italic 500 23px/1.3 "Cormorant Garamond",Georgia,serif}
+.info{background:var(--soft);border-radius:14px;padding:14px;margin-top:14px}
+.info h3{margin:0 0 8px;font:500 27px/1.1 "Cormorant Garamond",Georgia,serif}
+.info p:last-child{margin:0}
 .note{font-size:13px;color:var(--mute)}
+
+/* ===== Formas y color (más redondeado) ===== */
+body{background:linear-gradient(160deg,#ffe3c8 0%,#e9dcff 55%,#cdeedd 100%) fixed}
+.app{margin:12px auto;min-height:calc(100vh - 24px);border-radius:30px;border:0;border-image:none;box-shadow:0 10px 40px rgba(90,60,140,.18);padding:0 18px 40px}
+.logo{background:linear-gradient(135deg,#ffe3c8,#e9dcff)}
+.tabs{border-bottom:0;gap:6px;padding:8px 0}
+.tabs button{border:0;border-radius:99px;padding:9px 16px;background:#f5f0ff;color:#4a3d70}
+.tabs button[aria-selected="true"]{background:var(--acc-d);color:#fff;border:0}
+h2::after{content:"";display:block;width:72px;height:8px;margin-top:8px;background:radial-gradient(circle at 4px 4px,var(--acc) 3px,transparent 3.5px) 0 0/16px 8px repeat-x}
+.hero{border-radius:26px 26px 0 0;height:210px}
+.wave{display:block;width:100%;height:44px;margin-top:-43px;position:relative}
+.stat div{border-radius:26px 12px 26px 12px}
+.stat div:nth-child(1){background:#ffe6d0}
+.stat div:nth-child(2){background:#e8e0ff}
+.btn{border-radius:99px;background:linear-gradient(135deg,#c95f16,#a8490c);padding:13px 22px;box-shadow:0 6px 14px rgba(168,73,12,.3)}
+.btn.ghost{background:#fff;color:var(--ink);box-shadow:none}
+.quote{background:#fff2e2;border:0;border-radius:26px 26px 26px 6px;padding:14px 18px}
+.info{border-radius:32px 14px 32px 14px;padding:16px 18px;border:2px solid transparent}
+.info.i1{background:#fff0dc;border-color:#ffd9a8}
+.info.i2{background:#e4f5ea;border-color:#b9e0c7}
+.info.i3{background:#ece6ff;border-color:#d0c4ff}
+.item{border-radius:24px;border:2px solid #e5dcff;background:#fbf9ff}
+.th{border-radius:16px}
+.gc .pic{border-radius:26px 12px 26px 12px}
+select{border-radius:99px;padding-left:14px}
+dialog{border-radius:28px}
+dialog input,dialog select{border-radius:14px}
 </style>
 </head>
 <body>
 <div class="app">
   <div class="top">
-    <div class="logo" aria-hidden="true">⛺</div>
+    <div class="logo" id="logo" aria-hidden="true">⛺</div>
     <div><span class="badge">Campamento</span><div class="sub">de Verano · DC &amp; Marvel</div></div>
   </div>
 
@@ -76,14 +107,30 @@ dialog input,dialog select{width:100%;padding:11px;border-radius:10px;border:1px
   <section id="v-inicio">
     <!-- 🖼️ Para poner una imagen arriba, pega su link aquí: const HERO="https://..." (en el script) -->
     <div class="hero" id="hero" aria-hidden="true">⛺</div>
-    <h2>Bienvenid@ al campamento</h2>
-    <!-- ✏️ EDITA ESTE TEXTO -->
-    <p>Un campamento de verano donde, cuando se apaga la fogata, pasan cosas sobrenaturales 🌙. Aquí puedes reservar tu rol de DC o Marvel y ver cuáles ya están ocupados.</p>
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,64 C240,120 480,0 720,40 C960,80 1200,110 1440,50 L1440,120 L0,120 Z" fill="#fff"/></svg>
+    <h2>¡Campamento Wayne! ☀️</h2>
+    <!-- ✏️ EDITA ESTOS TEXTOS A TU GUSTO -->
+    <blockquote class="quote">«¿No sabes dónde mandar a tu carajito? ¡No te preocupes! Nuestro campamento es el ideal.»</blockquote>
     <div class="stat">
       <div><b id="n-res">0</b>roles ocupados</div>
       <div><b id="n-adm">3</b>administración</div>
     </div>
     <button class="btn" data-open>Reservar un rol</button>
+
+    <div class="info i1">
+      <h3>🌻 Un verano inolvidable</h3>
+      <p><b>🏄 Aire puro y natural</b><br>¡Olvídate del estrés de la ciudad! Te esperamos con lagos cristalinos, cielos azules despejados y el aroma fresco de los pinos silvestres.</p>
+      <p><b>🍦 Actividades desde el amanecer</b><br>Nadar en el lago, juegos en equipo, talleres de manualidades, canotaje, cantos en la fogata y malvaviscos asados todas las noches.</p>
+    </div>
+    <div class="info i2">
+      <h3>🎨 Información del campamento</h3>
+      <p>Nuestro staff está capacitado para brindarte la mejor experiencia y cuidarte en todo momento.</p>
+      <p><b>💼 Qué debes traer</b><br>Protector solar, repelente, tu mejor sonrisa, linterna de mano y tu Ficha de Registro firmada.</p>
+    </div>
+    <div class="info i3">
+      <h3>🎟️ ¡Te esperamos!</h3>
+      <p><b>🏖️ Cuotas limitadas por cabaña</b><br>Confirma tu asistencia entregando tu ficha con la Dirección antes de que se oculte el sol.</p>
+    </div>
   </section>
 
   <!-- RESERVAS -->
@@ -147,8 +194,9 @@ const ADMINS=[
   {c:"Rose Wilson",r:"Admin 1"},
   {c:"Harley Quinn",r:"Admin 2"}
 ];
-/* 🖼️ Imagen de la portada (déjala vacía si no quieres): */
-const HERO="";
+/* 🖼️ Imágenes: si no existen los archivos, se ve el diseño normal. */
+const HERO="hero.jpg";   // sube un archivo con este nombre al repositorio
+const LOGO="logo.jpg";   // idem (opcional)
 
 // Abre la página con #admin al final del link para poder liberar cualquier rol.
 const IS_ADMIN=location.hash==="#admin";
@@ -176,7 +224,8 @@ function show(t){
 document.querySelector(".tabs").onclick=e=>{const t=e.target.dataset&&e.target.dataset.t;if(t)show(t)};
 
 /* Portada */
-if(HERO){const i=document.createElement("img");i.src=HERO;i.alt="";i.onerror=()=>i.remove();$("hero").textContent="";$("hero").appendChild(i)}
+function slot(el,url){if(!url)return;const i=new Image();i.alt="";i.onload=()=>{el.textContent="";el.appendChild(i)};i.src=url}
+slot($("hero"),HERO);slot($("logo"),LOGO);
 
 /* Render */
 function render(){
